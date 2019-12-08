@@ -1,0 +1,4 @@
+obj\x86\Debug\_lab3MS_N.g.cs
+obj\x86\Debug\Workflow1.g.cs
+obj\x86\Debug\lab3MS_N_Workflow1_BeforeInitializeComponentHelper.cs
+C:\Users\mshak_000\source\repos\lab3MS_N\lab3MS_N\obj\x86\Debug\lab3MS_N_Workflow1_CompiledExpressionRoot.cs

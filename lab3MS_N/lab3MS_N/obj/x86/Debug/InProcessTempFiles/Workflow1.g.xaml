@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<l:Workflow1 xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:l="clr-namespace:lab3MS_N;assembly=lab3MS_N" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>lab3MS_N</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <l:Workflow1.Implementation>
+    <StateMachine>
+      <StateMachine.InitialState>
+        <State x:Name="__ReferenceID0" DisplayName="Active">
+          <State.Entry>
+            <Sequence>
+              <WriteLine>
+                <InArgument x:TypeArguments="x:String">
+                  <mca:CSharpValue x:TypeArguments="x:String">"Активное состояние \nВыберите действие:\n 1 - Команда паузы\n 2 - Команда выхода";</mca:CSharpValue>
+                </InArgument>
+              </WriteLine>
+              <Assign>
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">
+                    <mca:CSharpReference x:TypeArguments="x:String">Nastya</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine();</mca:CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </State.Entry>
+          <State.Transitions>
+            <Transition DisplayName="Pause Command">
+              <Transition.To>
+                <State x:Name="__ReferenceID2" DisplayName="Paused">
+                  <State.Entry>
+                    <Sequence>
+                      <WriteLine>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String">"Пауза \nВыберите действие:\n 1 - Вернуться в активное состояние\n 2 - Команда завершения процесса";</mca:CSharpValue>
+                        </InArgument>
+                      </WriteLine>
+                      <Assign>
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">
+                            <mca:CSharpReference x:TypeArguments="x:String">Nastya</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine();</mca:CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </State.Entry>
+                  <State.Transitions>
+                    <Transition DisplayName="End Command">
+                      <Transition.To>
+                        <State x:Name="__ReferenceID1" DisplayName="Inactive">
+                          <State.Entry>
+                            <Sequence>
+                              <WriteLine>
+                                <InArgument x:TypeArguments="x:String">
+                                  <mca:CSharpValue x:TypeArguments="x:String">"Неактивное состояние \nВыберите действие:\n 1 - Переход в активное состояние\n 2 - Команда выхода";</mca:CSharpValue>
+                                </InArgument>
+                              </WriteLine>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">Nastya</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine();</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </State.Entry>
+                          <State.Transitions>
+                            <Transition DisplayName="Begin Command" To="{x:Reference __ReferenceID0}">
+                              <Transition.Action>
+                                <WriteLine>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">"\nПереход в активное состояние"</mca:CSharpValue>
+                                  </InArgument>
+                                </WriteLine>
+                              </Transition.Action>
+                              <Transition.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">Nastya == "1";</mca:CSharpValue>
+                              </Transition.Condition>
+                            </Transition>
+                            <Transition DisplayName="Exit Command">
+                              <Transition.To>
+                                <State x:Name="__ReferenceID3" DisplayName="Exited" IsFinal="True">
+                                  <State.Entry>
+                                    <Sequence>
+                                      <WriteLine>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <mca:CSharpValue x:TypeArguments="x:String">"Все , это конец, приплыли тапочки к дивану";</mca:CSharpValue>
+                                        </InArgument>
+                                      </WriteLine>
+                                      <Delay>
+                                        <InArgument x:TypeArguments="x:TimeSpan">
+                                          <mca:CSharpValue x:TypeArguments="x:TimeSpan">Time;</mca:CSharpValue>
+                                        </InArgument>
+                                      </Delay>
+                                    </Sequence>
+                                  </State.Entry>
+                                </State>
+                              </Transition.To>
+                              <Transition.Action>
+                                <WriteLine>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">"\nВыходим из приложения";</mca:CSharpValue>
+                                  </InArgument>
+                                </WriteLine>
+                              </Transition.Action>
+                              <Transition.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">Nastya == "2";</mca:CSharpValue>
+                              </Transition.Condition>
+                            </Transition>
+                          </State.Transitions>
+                        </State>
+                      </Transition.To>
+                      <Transition.Action>
+                        <WriteLine>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">"\nВыполняется команда выхода";</mca:CSharpValue>
+                          </InArgument>
+                        </WriteLine>
+                      </Transition.Action>
+                      <Transition.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">Nastya == "2";</mca:CSharpValue>
+                      </Transition.Condition>
+                    </Transition>
+                    <Transition DisplayName="Resume Command" To="{x:Reference __ReferenceID0}">
+                      <Transition.Action>
+                        <WriteLine>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">"\nПереход в активное состояние";</mca:CSharpValue>
+                          </InArgument>
+                        </WriteLine>
+                      </Transition.Action>
+                      <Transition.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">Nastya == "1";</mca:CSharpValue>
+                      </Transition.Condition>
+                    </Transition>
+                  </State.Transitions>
+                </State>
+              </Transition.To>
+              <Transition.Action>
+                <WriteLine>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String">"\nВыполняется команда паузы"</mca:CSharpValue>
+                  </InArgument>
+                </WriteLine>
+              </Transition.Action>
+              <Transition.Condition>
+                <mca:CSharpValue x:TypeArguments="x:Boolean">Nastya == "1";</mca:CSharpValue>
+              </Transition.Condition>
+            </Transition>
+            <Transition DisplayName="End Command" To="{x:Reference __ReferenceID1}">
+              <Transition.Action>
+                <WriteLine>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String">"\nВыполняется команда завершения процесса";</mca:CSharpValue>
+                  </InArgument>
+                </WriteLine>
+              </Transition.Action>
+              <Transition.Condition>
+                <mca:CSharpValue x:TypeArguments="x:Boolean">Nastya == "2";</mca:CSharpValue>
+              </Transition.Condition>
+            </Transition>
+          </State.Transitions>
+        </State>
+      </StateMachine.InitialState>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <StateMachine.Variables>
+        <Variable x:TypeArguments="x:String" Name="Nastya">
+          <Variable.Default>
+            <mca:CSharpValue x:TypeArguments="x:String">"";</mca:CSharpValue>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:TimeSpan" Default="00:00:10" Name="Time" />
+      </StateMachine.Variables>
+      <sads:DebugSymbol.Symbol>d0BDOlxVc2Vyc1xtc2hha18wMDBcc291cmNlXHJlcG9zXGxhYjNNU19OXGxhYjNNU19OXFdvcmtmbG93MS54YW1sMCYD3wESAgEB2QEL2QFMAgFl3AE23AFAAgFkKAfQAQ8CAUdaF5wBHwIBKkEPtgEXAgENfx+OAScCAQIqCzwWAgFYwAEPwAFcAgFUuQEPvQEbAgFQzAEPzAFcAgFNxQEPyQEbAgFJXBtuJgIBO3ofemwCATdzH3crAgEzmAEfmAFsAgEwkQEflQErAgEsQxNVHgIBHqYBF6YBZAIBGp8BF6MBIwIBFrIBF7IBZAIBE6sBF68BIwIBD4EBI4wBLgIBBCsNLxkCAWAwDTsWAgFZuwETuwFuAgFRxwETxwF9AgFKXR1hKQIBQ2IdbSYCATx1I3WBAQIBNJMBI5MBewIBLUQVSCECASZJFVQeAgEfoQEboQF4AgEXrQEbrQF6AgEQggElhgExAgEJhwEliwEtAgEFLREtogECAWE4EzhkAgFdMxMzXwIBWl8hX8MBAgFEaiNqdAIBQGUjZW8CAT1GGUa7AQIBJ1EbUWwCASNMG0xnAgEghAEphAGUAQIBCokBKYkBbgIBBg==</sads:DebugSymbol.Symbol>
+    </StateMachine>
+  </l:Workflow1.Implementation>
+</l:Workflow1>
